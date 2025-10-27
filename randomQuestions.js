@@ -47,3 +47,104 @@ function foo(){
 }
 
 foo()
+
+
+console.log("*********************************************")
+
+
+function mergeData(arr1, arr2) {
+    // Your implementation
+
+    let map = new Map()
+
+    let res = []
+
+    arr2.forEach((x) => {
+        if (!map.has(x.id)) {
+            map.set(x.id,x)
+        }
+    })
+
+    for (let x of arr1) {
+        if (map.has(x.id)) {
+            let obj = map.get(x.id)
+            let keysArr = [...Object.keys(obj)]
+            for (let y of keysArr) {
+                if(x.y){
+                    x.y = obj[y]
+                }else{
+                    x[y] = obj[y]
+                }
+            }     
+        } 
+        res.push(x)
+        map.delete(x.id)
+    }
+
+
+    for(let [id,obj] of map){
+        res.push(obj)
+    }
+
+    console.log(res)
+
+    return res
+
+}
+
+//For the purpose of user debugging.
+//pass your arrays in function call
+mergeData([{id:1,name:"Alice"},{id:2,name:"Bob"}],[{id:2,age:30},{id:3,name:"Charlie"}]);
+
+console.log("*********************************************")
+
+function isPossible(start,n) {
+
+    if (n < 0) return false
+    if (n == 0) return true
+     
+    return isPossible(start+1, n-start)
+    
+}
+
+function isSumOfConsecutive(n) {
+// your implementation here
+
+if(n<=1) return false
+
+
+for (let i = 1; i < Math.floor(n / 2); i++){
+    if (isPossible(i, n)) {
+        console.log(i)
+        return true
+    }
+}
+
+return false
+
+}
+
+console.log(isSumOfConsecutive(8))
+  
+console.log("*********************************************")
+
+
+const flattenArray = (arr) =>{
+    
+    let res = []
+
+    for(let x of arr){
+        if(Array.isArray(x)){
+            res = res.concat(flattenArray(x))
+        }else{
+            res.push(x)
+        }
+    }
+
+    return res
+    
+}
+
+console.log(flattenArray([1,2,[1,2,3],[[1,2,3]],4,5]))
+
+console.log("*********************************************")
