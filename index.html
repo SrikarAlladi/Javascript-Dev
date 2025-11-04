@@ -26,7 +26,20 @@
         </div>
     </div>
 
-    <script type="module" src="./eventBubblingCapturing.js">
+    <script>
+
+        document.getElementById("grandParent").addEventListener("click",() => {
+            console.log("grandparent Called")
+        },true)
+
+        document.getElementById("child").addEventListener("click",() => {
+            console.log("child Called")
+        },true)
+
+    </script>
+
+
+    <script type="module" src="./thisKeyWord.js">
     </script>
 </body>
 </html>

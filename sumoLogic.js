@@ -46,24 +46,14 @@ const getAPIWithMerging = (getAPI) => {
       const cachced = map.get(cacheKey);
       const currentTime = Date.now(); 
       if(cachced && currentTime-cachced.time < 1000){
-        console.log("Cache BLock")
-        return cachced.data
+        return Promise.resolve(cachced.data)
       }
 
-    let promiseReturn =  getAPI(path , config)
-        .then((res) => { 
-            return res 
-        })
-        .catch((err) => {  
-            return err
-        })
-
-        map.set(cacheKey, {
-            time : currentTime,
-            data : promiseReturn
-        })
-
-        return promiseReturn
+      const promise = getAPI(path, config);
+      promise.then(data => {
+        map.put(cacheKey, {time: Date.now(), data})
+      })
+      return promise;
     }
  }
 

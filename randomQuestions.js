@@ -148,3 +148,108 @@ const flattenArray = (arr) =>{
 console.log(flattenArray([1,2,[1,2,3],[[1,2,3]],4,5]))
 
 console.log("*********************************************")
+
+
+let str = 'Hello     World'
+
+console.log(str.split(/\s+/));
+
+
+console.log("*********************************************")
+
+function flattenObject(obj, parentKey) {
+    //write your implementation here
+  
+    let res = {}
+
+    for(let x of Object.keys(obj)){
+        let newKey = (parentKey) ? `${parentKey}.${x}` : x;
+        if(typeof(obj[x]) == "object" && obj[x] != null && !Array.isArray(obj[x])){
+            Object.assign(res,flattenObject(obj[x],newKey))
+        }else{
+            res[newKey] = obj[x]
+        }
+
+    }
+    
+    return res;
+}
+
+
+let user = {
+    name: "John",
+    address: {
+      country: "India",
+      state: "India",
+      education: {
+        school: "APS",
+        year: 2021,
+      },
+    },
+  }; 
+
+console.log(flattenObject(user,"user"))
+
+
+console.log("*********************************************")
+
+function customAssign(target, ...sources) {
+    // Your implementation
+
+    for (let x of [...sources]) {
+        
+        console.log(x)
+
+        if(x !== null && typeof(x) == "object"){
+            for(let y of Object.keys(x)){
+                if(typeof(target) == "object"){
+                    target[y] = x[y]
+                }
+            }
+        }
+
+    }
+
+    return target
+
+}
+
+console.log(customAssign({a:1},{b:2}))
+
+
+console.log("*********************************************")
+
+function longestSequence(nums){
+
+
+    let set = new Set(nums)
+
+    let max = 0;
+
+
+    let count = 0;
+    let current = 0;
+
+    for(let num of set){
+        if(!set.has(num-1)){
+            count = 1;
+            current = num;
+        }
+
+        while(set.has(current+1)){
+            count++;
+            current++;
+        }
+
+        max = Math.max(max,count)
+
+    }
+
+    return max;
+
+}
+
+console.log(longestSequence([100,2,5,1,4,3,89,6]))
+
+
+console.log("*********************************************")
