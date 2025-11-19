@@ -1,5 +1,6 @@
 var a = 6;
 let b = 5;
+
 {
     // This curly braces defines block , it combines multiple js statements into a group 
     var a = 10;

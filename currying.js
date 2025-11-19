@@ -46,3 +46,5 @@ console.log(res.reduce(function(curr,acc){
     }
     return acc
 },0))
+
+ // Binding function with arguments 

@@ -46,6 +46,11 @@ resultPromise.then((list) => {
 console.log(list);
 });
 
+const resultPromiseAllSettled = Promise.allSettled([p1, p2, p3]);
+resultPromiseAllSettled.then((list) => {
+console.log(list);
+}) 
+
 
 // | Method                                               | Description                                                                        | Example                                                 |
 // | ---------------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------- |
@@ -56,3 +61,15 @@ console.log(list);
 // | *Promise.race(iterable)*                         | Resolves or rejects as soon as *one* promise settles.                            | Promise.race([p1, p2])                                |
 // | *Promise.any(iterable)*                          | Resolves as soon as *one* promise fulfills; rejects only if all reject.          | Promise.any([p1, p2, p3])                             |
 // | *Promise.withResolvers()* 🆕 (ES2024 proposal) | Returns { promise, resolve, reject } tuple — lets you resolve/reject externally. | const { promise, resolve } = Promise.withResolvers(); |
+
+
+
+
+
+// String[] inputArray = { "abcd", "java", "dcba", "ajav", "xyz", "epam", "pame", "aepm" };
+ 
+// expected output
+ 
+// "epam", "pame", "aepm" 		
+// "abcd" "dcba"
+// "java" "ajav"

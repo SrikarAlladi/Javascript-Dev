@@ -253,3 +253,30 @@ console.log(longestSequence([100,2,5,1,4,3,89,6]))
 
 
 console.log("*********************************************")
+
+
+function debounce(fn,delay){
+    let timer;
+    return function(...args){
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            fn.apply(this,args)
+        }, delay);
+    }
+
+}
+
+function fn(str){
+    console.log(str);
+}
+
+const debouncedfn = debounce(fn,1000);
+
+
+debouncedfn("h");
+debouncedfn("he");
+debouncedfn("hel");
+debouncedfn("hell");
+debouncedfn("hello");
+
+console.log("*********************************************")

@@ -52,3 +52,4 @@ const sumValue = radius.reduce(function(acc,curr){
 console.log(maxValue);
 
 console.log(sumValue)
+
