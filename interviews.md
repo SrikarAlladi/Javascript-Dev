@@ -1,11 +1,11 @@
-Eightfold
+Eightfold (1st round)
 
     - Hiring Manager round could’ve explained project repo structure better
     - Error Boundaries in react
     - Could've used Draw.io Tool
     - Linters
 
-Merkle Science
+Merkle Science (HM + 2 Tech rounds)
 
     - Could've handled machine coding problem better
     - Javascript fundamentals ( Event delegation, Event bubbling & capturing, Hoisting, Throttling)
@@ -14,23 +14,23 @@ Merkle Science
     - Levenshtien Algorithm detailing
     - Promises & observables (Need to remove it from resume if possible)
 
-Sumo Logic
+Sumo Logic (OA + 2 Tech rounds)
 
     - Javascript based coding questions (Promise handling)
 
-Tekion
+Tekion (MC + 1st tech round)
 
     - Handling type in javascript
     - Unit & Integration teting ( Jest )
     - Handling excessive props passed to reusable component
     - Event delegation
 
-Mojro
+Mojro (Screening + 1st tech round)
 
     - Tic Tac Toe game Machine coding (Hands on on famous frontend interview questions)
     - Fumbled at CSS (Grid & Flex box)
 
-Volt Payment
+Volt Payment (Screening)
 
     - React Hooks (useState & useCallback)
 
@@ -38,15 +38,19 @@ Tempo labs
 
     - NA
 
-Walmart
+Walmart (2 Tech Rounds - Pending)
 
     - Optional Chaining, unmounting process in Reconcilation
     - Redis Cache Implementation, Read through & write through cache , TTL
     - Runnable & Callable in Java
 
-Hevo Data - Simultaneous promise handling - Messed up with LLD , Wrong usage of spread operator | Practice Famous Frontend LLD problems - Redux boiler plate code
+Hevo Data (2 Tech rounds (Coding + LLD))
 
-Poppulo
+    - Simultaneous promise handling
+    - Messed up with LLD , Wrong usage of spread operator | Practice Famous Frontend LLD problems
+    - Redux boiler plate code
+
+Poppulo (2 Tech Rounds)
 
     - JWT Token (usage, auto refreshing token)
     - Hands on with Redux
