@@ -38,39 +38,46 @@ fetchData('/list', {keyword: 'abc'}).then(console.log)
 
 
 const getAPIWithMerging = (getAPI) => {
-    let map = new Map();
 
-    return (path,config) => {
-      const cacheKey = JSON.stringify({path , config});
-      
-      const cachced = map.get(cacheKey);
-      const currentTime = Date.now(); 
-      if(cachced && currentTime-cachced.time < 1000){
-        return Promise.resolve(cachced.data)
+  const map = new Map();
+
+  return (path,config) => {
+    
+    const key = path + JSON.stringify(config)
+
+    const now = Date.now()
+
+    if(map.has(key)){
+      const cacheData = map.get(key)
+      if(now - cacheData.timestamp <= 1000){
+        return cacheData.promise
       }
-
-      const promise = getAPI(path, config);
-      promise.then(data => {
-        map.put(cacheKey, {time: Date.now(), data})
-      })
-      return promise;
     }
- }
+
+    console.log("API Called")
+
+    const promise = getAPI(path,config)
+
+    map.set(key,{promise, timestamp : now})
+
+    return promise
+  }
+  
+}
 
 const getAPI = (path , config) => {
-  console.log('Api called');
-  let pr = new Promise(function(resolve,reject) {
-    if(path && config){
-      resolve(config)
-    }else{
-      reject("API CALL FAILED")
-    }
+
+  return new Promise((resolve,reject) => {
+    setTimeout(() => {
+      resolve(path + JSON.stringify(config))
+    },300)
   })
 
-  return pr
 }
 
 
 const fetchData = getAPIWithMerging(getAPI)
 fetchData('/list', { keyword: 'abc'}).then(console.log);
+fetchData('/list', { keyword: 'abc'}).then(console.log); 
+fetchData('/list', { keyword: 'abc'}).then(console.log); 
 fetchData('/list', { keyword: 'abc'}).then(console.log); 

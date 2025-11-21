@@ -17,3 +17,15 @@ String.prototype.myName = function(){
 }
 
 console.log(name.myName())
+
+
+Array.prototype.myReduce = function(acc){
+    for(let i=0;i<this.length;i++){
+        acc += this[i]
+    }
+    return acc
+}
+
+const arr = [1,2,3,4,5]
+
+console.log(arr.myReduce(2));
