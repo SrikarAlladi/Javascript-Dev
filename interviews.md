@@ -9,7 +9,7 @@ Merkle Science (HM + 2 Tech rounds)
 
     - Could've handled machine coding problem better
     - Javascript fundamentals ( Event delegation, Event bubbling & capturing, Hoisting, Throttling)
-    - Client Side Rendering & Service side rendering
+    - Client Side Rendering & Server side rendering
     - UI & Service side caching techniques
     - Levenshtien Algorithm detailing
     - Promises & observables (Need to remove it from resume if possible)
@@ -20,7 +20,7 @@ Sumo Logic (OA + 2 Tech rounds)
 
 Tekion (MC + 1st tech round)
 
-    - Handling type in javascript
+    - Handling type in javascript (proptypes)
     - Unit & Integration teting ( Jest )
     - Handling excessive props passed to reusable component
     - Event delegation

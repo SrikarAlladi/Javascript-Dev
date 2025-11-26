@@ -81,3 +81,6 @@ fetchData('/list', { keyword: 'abc'}).then(console.log);
 fetchData('/list', { keyword: 'abc'}).then(console.log); 
 fetchData('/list', { keyword: 'abc'}).then(console.log); 
 fetchData('/list', { keyword: 'abc'}).then(console.log); 
+fetchData('/list', { keyword: 'ac'}).then(console.log); 
+fetchData('/list', { keyword: 'ac'}).then(console.log); 
+fetchData('/list', { keyword: 'ac'}).then(console.log); 
